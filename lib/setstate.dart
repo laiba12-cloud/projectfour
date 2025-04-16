@@ -8,7 +8,6 @@ class SetStateScreen extends StatefulWidget {
 }
 
 class _SetStateScreenState extends State<SetStateScreen> {
-  int result=0;
   int add=0;
   int sub=0;
   int mul=0;
@@ -29,118 +28,122 @@ class _SetStateScreenState extends State<SetStateScreen> {
         ),
         ),
       ),
-      body:Column(
-        children:<Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              'Arithmatic Operators',style:TextStyle(
-              color:Colors.red,
-              fontWeight:FontWeight.bold,
-              fontSize:30,
-            ),
-            ),
+      body:SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child:
+          Column(
+            children:<Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Arithmatic Operators',style:TextStyle(
+                  color:Colors.red,
+                  fontWeight:FontWeight.bold,
+                  fontSize:30,
+                ),
+                ),
 
-          ),
-          SizedBox(height:10),
-          
-          Text(
-            'addition=$add'
-          ),
-          SizedBox(height:10),
-          FloatingActionButton(
-            backgroundColor: Colors.red,
-          onPressed:(){
-            int a=2;
-            int b=4;
-            add=a+b;
-            setState((){});
-            print("add=$add");
-          },
-          child:Icon(Icons.add),
-          ),
-          SizedBox(height:10),
-          Text(
-            'Subtraction='
-          ),
-          SizedBox(height:10),
-          FloatingActionButton(
-            backgroundColor: Colors.red,
-            onPressed:(){
-              int a=2;
-              int b=4;
-              int sub=a-b;
-              setState((){});
-              print("sub=$sub");
-            },
-            child:Icon(Icons.remove),
-          ),
-             SizedBox(height:10),
-          Text(
-              'Multiplication=0'
-          ),
-          SizedBox(height:10),
-          FloatingActionButton(
-            backgroundColor: Colors.red,
-            onPressed:(){
-              int a=2;
-              int b=4;
-              int mul=a*b;
-              setState((){});
-              print("mul=$mul");
-            },
-            child:TextButton(
-              onPressed: (){
-              },
-              child:Text(
-                '*',
               ),
-            )
-          ),
-          SizedBox(height:10),
-          Text('Division=0',),
-          FloatingActionButton(
-            backgroundColor: Colors.red,
+              SizedBox(height:10),
+
+              Text(
+                'addition=$add'
+              ),
+              SizedBox(height:10),
+              FloatingActionButton(
+                backgroundColor: Colors.red,
               onPressed:(){
                 int a=2;
                 int b=4;
-                double div=a/b;
+                add=a+b;
                 setState((){});
-                print("div=$div");
+                print("add=$add");
               },
-              child:TextButton(
-                onPressed: (){
+              child:Icon(Icons.add),
+              ),
+              SizedBox(height:10),
+              Text(
+                'Subtraction=$sub'
+              ),
+              SizedBox(height:10),
+              FloatingActionButton(
+                backgroundColor: Colors.red,
+                onPressed:(){
+                  int a=2;
+                  int b=4;
+                  sub=b-a;
+                  setState((){});
+                  print("sub=$sub");
                 },
-                child:Text(
-                  '/',
-                ),
-              )
-          ),
+                child:Icon(Icons.remove),
+              ),
+                 SizedBox(height:10),
+              Text(
+                  'Multiplication=$mul'
+              ),
+              SizedBox(height:10),
+              FloatingActionButton(
+                backgroundColor: Colors.red,
+                onPressed:() {
+    int a = 2;
+    int b = 4;
+    mul = a*b;
+    setState(() {});
+    print("mul=$mul");
+    },
+    child:TextButton(
+    onPressed: (){},
+    child:Text(
+    '*',
+    ),
+    ),
 
-SizedBox(height:10),
-          Text(
-            'Modulos=0',
-          ),
+                ),
+              SizedBox(height:10),
+              Text('Division=$div',),
+              FloatingActionButton(
+                backgroundColor: Colors.red,
+                  onPressed:(){
+                  double a=2.0;
+                    double b=4.0;
+                    div=a/b;
+                    setState((){});
+                    print("div=$div");
+                  },
+                  child:TextButton(
+                    onPressed: (){
+                    },
+                    child:Text(
+                      '/',
+                    ),
+                  )
+              ),
+
           SizedBox(height:10),
-          FloatingActionButton(
-            backgroundColor: Colors.red,
-              onPressed:(){
-                int a=2;
-                int b=4;
-                double mod=a/b*100;
-                setState((){});
-                print("modulos=$mod");
-              },
-              child:TextButton(
-                onPressed: (){
-                },
-                child:Text(
-                  '%',
-                ),
-              )
-          ),
+              Text(
+                'Modulos=$mod',
+              ),
+              SizedBox(height:10),
+              FloatingActionButton(
+                backgroundColor: Colors.red,
+                  onPressed:(){
+                    double a=2.0;
+                    double b=4.0;
+                    mod=a/b*100;
+                      setState((){});
+                    print("modulos=$mod");
+                  },
+                  child:TextButton(
+                    onPressed: (){
+                    },
+                    child:Text(
+                      '%',
+                    ),
+                  )
+              ),
 
-      ],
+          ],
+          ),
       ),
     );
   }
