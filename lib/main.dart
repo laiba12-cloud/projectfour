@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/textform.dart';
 //import 'package:untitled/burgersclass.dart';
-import 'package:untitled/setstate.dart';
+//import 'package:untitled/setstate.dart';
 //import 'package:untitled/buttonsclass.dart';
 //import 'package:untitled/homescreen.dart';
 //import 'package:untitled/hometask.dart';
@@ -16,13 +17,14 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: //Language()
+      home:TextFormScreen()
+      //Language()
       //SignUpScreen()
      //LoginScreen()
       //ButtonClassScreen()
       //HomeClassScreen()
       //BurgerClassScreen()
-      SetStateScreen()
+      //SetStateScreen()
     );
   }
 }
