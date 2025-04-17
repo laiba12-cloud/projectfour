@@ -91,11 +91,8 @@ class _SetStateScreenState extends State<SetStateScreen> {
     setState(() {});
     print("mul=$mul");
     },
-    child:TextButton(
-    onPressed: (){},
     child:Text(
     '*',
-    ),
     ),
 
                 ),
@@ -110,13 +107,10 @@ class _SetStateScreenState extends State<SetStateScreen> {
                     setState((){});
                     print("div=$div");
                   },
-                  child:TextButton(
-                    onPressed: (){
-                    },
-                    child:Text(
+                  child:Text(
                       '/',
                     ),
-                  )
+
               ),
 
           SizedBox(height:10),
@@ -129,18 +123,14 @@ class _SetStateScreenState extends State<SetStateScreen> {
                   onPressed:(){
                     double a=2.0;
                     double b=4.0;
-                    mod=a/b*100;
+                    mod=b*100/a;
                       setState((){});
                     print("modulos=$mod");
                   },
-                  child:TextButton(
-                    onPressed: (){
-                    },
-                    child:Text(
+                  child:Text(
                       '%',
                     ),
-                  )
-              ),
+                  ),
 
           ],
           ),
