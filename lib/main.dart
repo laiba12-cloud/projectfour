@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/textform.dart';
+import 'package:untitled/swapscreen.dart';
+//import 'package:untitled/textform.dart';
 //import 'package:untitled/burgersclass.dart';
 //import 'package:untitled/setstate.dart';
 //import 'package:untitled/buttonsclass.dart';
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:TextFormScreen()
+      home:SwapClassScreen()
+      //TextFormScreen()
       //Language()
       //SignUpScreen()
      //LoginScreen()

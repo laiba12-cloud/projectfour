@@ -145,9 +145,7 @@ TextEditingController n2Controller=TextEditingController();
                         setState((){});
                         print("mul=$mul");
                       },
-                      child:Text(
-                        '*',
-                      ),
+                      child:Icon(Icons.clear),
                     ),
                     Text(
                       'multiplication=$mul',
@@ -187,9 +185,7 @@ TextEditingController n2Controller=TextEditingController();
                         setState((){});
                         print("mod=$mod");
                       },
-                      child:Text(
-                       '%',
-                      ),
+                      child:Icon(Icons.percent),
                     ),
                     Text(
                       'modulos=$mod',
