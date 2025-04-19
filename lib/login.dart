@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/buttonsclass.dart';
+import 'package:untitled/whatsappchat.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -37,8 +38,10 @@ body:Column(
         border:Border.all(width:5,color:Colors.white,)
       ),
       child:Center(
-        child:Text(
-          'enter user name',
+        child:TextFormField(
+          style:TextStyle(
+            color:Colors.black,fontWeight:FontWeight.bold,
+          ),
         ),
       ),
     ),
@@ -62,7 +65,7 @@ body:Column(
       child:FloatingActionButton(
         onPressed:(){
           Navigator.push(
-            context,MaterialPageRoute(builder:(context)=>ButtonClassScreen())
+            context,MaterialPageRoute(builder:(context)=>WhatsAppChatScreen())
           );
         },
         child:Text(

@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/LogInAdvance.dart';
+import 'package:untitled/dressesshop.dart';
+import 'package:untitled/even-numbers.dart';
+import 'package:untitled/evenodd.dart';
+import 'package:untitled/login.dart';
 import 'package:untitled/swapscreen.dart';
+import 'package:untitled/swapwithout.dart';
+import 'package:untitled/wapda.dart';
+//import 'package:untitled/swapscreen.dart';
 //import 'package:untitled/textform.dart';
 //import 'package:untitled/burgersclass.dart';
 //import 'package:untitled/setstate.dart';
@@ -18,7 +26,15 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:SwapClassScreen()
+      home:
+      EvenNumberClass()
+      //WapdaScreen()
+      //DressShopScreen()
+      //EvenOddScreen()
+      //SwapWithoutScreen()
+      //LogInAdvanceScreen()
+      //LoginScreen()
+      //SwapClassScreen()
       //TextFormScreen()
       //Language()
       //SignUpScreen()

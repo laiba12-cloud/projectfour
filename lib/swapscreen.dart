@@ -35,21 +35,11 @@ class _SwapClassScreenState extends State<SwapClassScreen> {
           Icon(Icons.more_vert_outlined),
         ],
       ),
-      body:SingleChildScrollView(
+      body:Center(
 
         child:Column(
             children:[
-              Row(
-                children: [
-                  SizedBox(width:330),
-                  Text(
-                    'Value of a=',style:TextStyle(
-                    fontWeight:FontWeight.bold,
-                    color:Colors.black,
-                    fontSize:20,
-                  ),
-                  ),
-                  SizedBox(width:20),
+                  SizedBox(height:30),
                   Container(
                     height:40,
                     width:230,
@@ -61,7 +51,7 @@ class _SwapClassScreenState extends State<SwapClassScreen> {
                         controller:n1Controller,style:TextStyle(
                         color:Colors.black,
                         fontWeight:FontWeight.bold,
-                        fontSize:20,
+                        fontSize:15,
                       ),
                         decoration:InputDecoration(
                           hintText:'enter 1st number',
@@ -75,21 +65,7 @@ class _SwapClassScreenState extends State<SwapClassScreen> {
 
                       ),
                     ),
-
-                ],
-              ),
-          SizedBox(height:15),
-             Row(
-               children:[
-                 SizedBox(width:330),
-                 Text(
-                   'value of b=',style:TextStyle(
-              fontWeight:FontWeight.bold,
-              color:Colors.black,
-              fontSize:20,
-                 ),
-                 ),
-             SizedBox(width:20),
+          SizedBox(height:25),
              Container(
                height:40,
                   width:230,
@@ -101,7 +77,7 @@ class _SwapClassScreenState extends State<SwapClassScreen> {
                     controller:n2Controller,style:TextStyle(
                     color:Colors.black,
                     fontWeight:FontWeight.bold,
-                    fontSize:20,
+                    fontSize:15,
                   ),
                     decoration:InputDecoration(
                       hintText:'enter 2nd number',
@@ -115,17 +91,9 @@ class _SwapClassScreenState extends State<SwapClassScreen> {
 
                   ),
                 ),
-              ],
-             ),
-              SizedBox(height:40),
 
-              Container(
-                height:40,
-                width:100,decoration:BoxDecoration(
-              borderRadius:BorderRadius.circular(10),
-                color:Colors.purpleAccent,
-              ),
-                child: FloatingActionButton(
+              SizedBox(height:20),
+              FloatingActionButton(
                   onPressed:(){
                    a=int.parse(n1Controller.text);
                    b=int.parse(n2Controller.text);
@@ -141,32 +109,32 @@ class _SwapClassScreenState extends State<SwapClassScreen> {
                     'SWAP',style:TextStyle(
                       color:Colors.black,
                       backgroundColor: Colors.purpleAccent,
-                      fontSize:20,
+                      fontSize:15,
                       fontWeight:FontWeight.bold,
                     ),
                     ),
                 ),
-              ),
-              SizedBox(height:30),
+              SizedBox(height:20),
               Text(
                 'after swapping value of a=$a',
                 style:TextStyle(
                   color:Colors.black,
                   fontWeight:FontWeight.bold,
-                  fontSize:30,
+                  fontSize:15,
                 ),
               ),
-              SizedBox(height:30),
+              SizedBox(height:20),
               Text(
                 'after swapping value of b=$b',
                 style:TextStyle(
                 color:Colors.black,
                 fontWeight:FontWeight.bold,
-                fontSize:30,
+                fontSize:15,
               ),
               ),
-            ],
-          ),
+
+      ],
+    ),
       ),
     );
   }
