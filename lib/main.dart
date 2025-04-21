@@ -27,14 +27,14 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home:
-      EvenNumberClass()
+     // EvenNumberClass()
       //WapdaScreen()
       //DressShopScreen()
       //EvenOddScreen()
       //SwapWithoutScreen()
       //LogInAdvanceScreen()
       //LoginScreen()
-      //SwapClassScreen()
+      SwapClassScreen()
       //TextFormScreen()
       //Language()
       //SignUpScreen()
