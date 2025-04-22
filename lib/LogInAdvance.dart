@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/Goldjewapp.dart';
 import 'package:untitled/burgersclass.dart';
 import 'package:untitled/whatsappchat.dart';
 
@@ -15,18 +16,18 @@ TextEditingController passwordController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.greenAccent,
+      backgroundColor: Colors.yellow,
       appBar:AppBar(
-        backgroundColor: Colors.yellow,
-        leading:Icon(Icons.login),
+        backgroundColor: Colors.black,
+        leading:Icon(Icons.login,color:Colors.yellow),
         title:Text(
           'Login',style:TextStyle(
-          color:Colors.black,
+          color:Colors.yellow,
           fontWeight:FontWeight.bold,
           fontSize:20,
         ),
         ),
-        centerTitle: false,
+        centerTitle:true,
 
       ),
          body:Center(
@@ -38,18 +39,18 @@ TextEditingController passwordController=TextEditingController();
                        width:260,
                        decoration:BoxDecoration(
                          borderRadius:BorderRadius.circular(10),
-                         color:Colors.red,
+                         color:Colors.black,
                        ),
                        child:TextFormField(
                          controller:emailController,
                          style:TextStyle(
-                           color:Colors.black,
+                           color:Colors.yellow,
                            fontWeight:FontWeight.bold,
                          ),
                          decoration:InputDecoration(
                            hintText:'enter your email',
                            hintStyle:TextStyle(
-                             color:Colors.black,
+                             color:Colors.yellow,
                              fontWeight:FontWeight.bold,
                            ),
                          ),
@@ -61,18 +62,18 @@ TextEditingController passwordController=TextEditingController();
                        width:260,
                        decoration:BoxDecoration(
                          borderRadius:BorderRadius.circular(10),
-                         color:Colors.red,
+                         color:Colors.black,
                        ),
                        child:TextFormField(
                          controller: passwordController,
                          style:TextStyle(
-                           color:Colors.black,
+                           color:Colors.yellow,
                            fontWeight:FontWeight.bold,
                          ),
                          decoration:InputDecoration(
                            hintText:'enter your password',
                            hintStyle:TextStyle(
-                             color:Colors.black,
+                             color:Colors.yellow,
                              fontWeight:FontWeight.bold,
                            ),
                          ),
@@ -89,7 +90,7 @@ TextEditingController passwordController=TextEditingController();
                              {
                                Navigator.push(
                                  context,
-                                 MaterialPageRoute(builder:(context)=>BurgerClassScreen())
+                                 MaterialPageRoute(builder:(context)=>GoldJewAppScreen())
                                );
                              }
                          else

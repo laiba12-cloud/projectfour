@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/Goldjewapp.dart';
 import 'package:untitled/LogInAdvance.dart';
 import 'package:untitled/dressesshop.dart';
 import 'package:untitled/even-numbers.dart';
 import 'package:untitled/evenodd.dart';
+import 'package:untitled/Goldjewapp.dart';
 import 'package:untitled/login.dart';
 import 'package:untitled/swapscreen.dart';
 import 'package:untitled/swapwithout.dart';
@@ -26,15 +28,16 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:
-     // EvenNumberClass()
+      home:LogInAdvanceScreen()
+      //GoldJewAppScreen()
+     //EvenNumberClass()
       //WapdaScreen()
       //DressShopScreen()
       //EvenOddScreen()
       //SwapWithoutScreen()
       //LogInAdvanceScreen()
       //LoginScreen()
-      SwapClassScreen()
+      //SwapClassScreen()
       //TextFormScreen()
       //Language()
       //SignUpScreen()
