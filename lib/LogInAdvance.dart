@@ -30,87 +30,87 @@ TextEditingController passwordController=TextEditingController();
         centerTitle:true,
 
       ),
-         body:Center(
-           child: Column(
-               children:[
-                 SizedBox(height:40),
-                     Container(
-                       height:40,
-                       width:260,
-                       decoration:BoxDecoration(
-                         borderRadius:BorderRadius.circular(10),
-                         color:Colors.black,
-                       ),
-                       child:TextFormField(
-                         controller:emailController,
-                         style:TextStyle(
-                           color:Colors.yellow,
-                           fontWeight:FontWeight.bold,
-                         ),
-                         decoration:InputDecoration(
-                           hintText:'enter your email',
-                           hintStyle:TextStyle(
-                             color:Colors.yellow,
-                             fontWeight:FontWeight.bold,
-                           ),
-                         ),
-                       ),
-                     ),
-                 SizedBox(height:20),
-                 Container(
-                   height:40,
-                       width:260,
-                       decoration:BoxDecoration(
-                         borderRadius:BorderRadius.circular(10),
-                         color:Colors.black,
-                       ),
-                       child:TextFormField(
-                         controller: passwordController,
-                         style:TextStyle(
-                           color:Colors.yellow,
-                           fontWeight:FontWeight.bold,
-                         ),
-                         decoration:InputDecoration(
-                           hintText:'enter your password',
-                           hintStyle:TextStyle(
-                             color:Colors.yellow,
-                             fontWeight:FontWeight.bold,
-                           ),
-                         ),
-                       ),
-                     ),
-                 SizedBox(height:40),
-                 FloatingActionButton(
-                   onPressed: (){
-                     String email=emailController.text;
-                     String password=passwordController.text;
-                     if(email=='laiba@gmail.com')
-                       {
-                         if(password=="1234")
-                             {
-                               Navigator.push(
-                                 context,
-                                 MaterialPageRoute(builder:(context)=>GoldJewAppScreen())
-                               );
-                             }
-                         else
-                           {
-                             print("password is incorrect");
-                           }
-                       }
-                     else {
-                       print("email is incorrect");
-                     }
-                   },
-                   child:Text(
-                     'Login',style:TextStyle(
-                     color:Colors.black,
-                   ),
-                   ),
-                 ),
-               ],
-             ),
-           ),
-        );
+      body:Center(
+        child: Column(
+          children:[
+            SizedBox(height:40),
+            Container(
+              height:40,
+              width:260,
+              decoration:BoxDecoration(
+                borderRadius:BorderRadius.circular(10),
+                color:Colors.black,
+              ),
+              child:TextFormField(
+                controller:emailController,
+                style:TextStyle(
+                  color:Colors.yellow,
+                  fontWeight:FontWeight.bold,
+                ),
+                decoration:InputDecoration(
+                  hintText:'enter your email',
+                  hintStyle:TextStyle(
+                    color:Colors.yellow,
+                    fontWeight:FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height:20),
+            Container(
+              height:40,
+              width:260,
+              decoration:BoxDecoration(
+                borderRadius:BorderRadius.circular(10),
+                color:Colors.black,
+              ),
+              child:TextFormField(
+                controller: passwordController,
+                style:TextStyle(
+                  color:Colors.yellow,
+                  fontWeight:FontWeight.bold,
+                ),
+                decoration:InputDecoration(
+                  hintText:'enter your password',
+                  hintStyle:TextStyle(
+                    color:Colors.yellow,
+                    fontWeight:FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height:40),
+            FloatingActionButton(
+              onPressed: (){
+                String email=emailController.text;
+                String password=passwordController.text;
+                if(email=='laiba@gmail.com')
+                {
+                  if(password=="1234")
+                  {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder:(context)=>GoldJewAppScreen())
+                    );
+                  }
+                  else
+                  {
+                    print("password is incorrect");
+                  }
+                }
+                else {
+                  print("email is incorrect");
+                }
+              },
+              child:Text(
+                'Login',style:TextStyle(
+                color:Colors.black,
+              ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

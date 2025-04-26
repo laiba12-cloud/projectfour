@@ -8,15 +8,16 @@ class GoldJewAppScreen extends StatefulWidget {
 
 class _GoldJewAppScreenState extends State<GoldJewAppScreen> {
 
-  TextEditingController priceController=TextEditingController();
+  TextEditingController pricerateController=TextEditingController();
   TextEditingController tolaquantityController=TextEditingController();
   TextEditingController mashaquantityController=TextEditingController();
-  double totalprice=0;
-  double result=0;
-  double masha=0.0;
-  int a=0;
-  int b=0;
-  int c=0;
+  TextEditingController rattiquantityController=TextEditingController();
+  TextEditingController pointsquantityController=TextEditingController();
+  double totaltola=0.0;
+  double totalmasha=0.0;
+  double totalratti=0.0;
+  double totalpoints=0.0;
+  double totalbill=0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,133 +41,220 @@ class _GoldJewAppScreenState extends State<GoldJewAppScreen> {
       ),
       body:
       Center(
-        child:  Column(
-        children: [
-          SizedBox(height:50),
-          Container(
-            height:40,
-            width:190,
-            decoration: BoxDecoration(
-              color:Colors.black,
-              borderRadius:BorderRadius.circular(10),
-            ),
-            child:TextFormField(
-              controller:priceController,
-              style:TextStyle(
-                color:Colors.yellow,
-                fontWeight:FontWeight.bold,
+        child:  SingleChildScrollView(
+          scrollDirection:Axis.vertical,
+          child: Column(
+          children: [
+            SizedBox(height:50),
+            Container(
+              height:40,
+              width:190,
+              decoration: BoxDecoration(
+                color:Colors.black,
+                borderRadius:BorderRadius.circular(10),
               ),
-              decoration: InputDecoration(
-                hintText:'enter per tola price',
-                hintStyle:TextStyle(
+              child:TextFormField(
+                keyboardType:TextInputType.number,
+                controller:pricerateController,
+                style:TextStyle(
                   color:Colors.yellow,
                   fontWeight:FontWeight.bold,
                 ),
-              ),
-            ),
-          ),
-          SizedBox(height:20),
-          Container(
-            height:40,
-            width:190,
-            decoration: BoxDecoration(
-              color:Colors.black,
-              borderRadius:BorderRadius.circular(10),
-            ),
-            child:TextFormField(
-              controller:tolaquantityController,
-              style:TextStyle(
-                color:Colors.yellow,
-                fontWeight:FontWeight.bold,
-              ),
-              decoration: InputDecoration(
-                hintText:'enter tola quantity',
-                hintStyle:TextStyle(
-                  color:Colors.yellow,
-                  fontWeight:FontWeight.bold,
+                decoration: InputDecoration(
+                  border:InputBorder.none,
+                  hintText:'enter per tola price',
+                  hintStyle:TextStyle(
+                    color:Colors.yellow,
+                    fontWeight:FontWeight.bold,
+                  ),
                 ),
               ),
             ),
-          ),
-          SizedBox(height:20),
-          Container(
-            height:40,
-            width:190,
-            decoration: BoxDecoration(
-              color:Colors.black,
-              borderRadius:BorderRadius.circular(10),
-            ),
-            child:TextFormField(
-              controller:mashaquantityController,
-              style:TextStyle(
-                color:Colors.yellow,
-                fontWeight:FontWeight.bold,
+            SizedBox(height:20),
+            Container(
+              height:40,
+              width:190,
+              decoration: BoxDecoration(
+                color:Colors.black,
+                borderRadius:BorderRadius.circular(10),
               ),
-              decoration: InputDecoration(
-                hintText:'enter masha quantity',
-                hintStyle:TextStyle(
+              child:TextFormField(
+                keyboardType:TextInputType.number,
+                controller:tolaquantityController,
+                style:TextStyle(
                   color:Colors.yellow,
                   fontWeight:FontWeight.bold,
                 ),
+                decoration: InputDecoration(
+                  border:InputBorder.none,
+                  hintText:'enter tola quantity',
+                  hintStyle:TextStyle(
+                    color:Colors.yellow,
+                    fontWeight:FontWeight.bold,
+                  ),
+                ),
               ),
             ),
-          ),
+            SizedBox(height:20),
+            Container(
+              height:40,
+              width:190,
+              decoration: BoxDecoration(
+                color:Colors.black,
+                borderRadius:BorderRadius.circular(10),
+              ),
+              child:TextFormField(
+                keyboardType:TextInputType.number,
+                controller:mashaquantityController,
+                style:TextStyle(
+                  color:Colors.yellow,
+                  fontWeight:FontWeight.bold,
+                ),
+                decoration: InputDecoration(
+                  border:InputBorder.none,
+                  hintText:'enter masha quantity',
+                  hintStyle:TextStyle(
+                    color:Colors.yellow,
+                    fontWeight:FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height:20),
+            Container(
+              height:40,
+              width:190,
+              decoration: BoxDecoration(
+                color:Colors.black,
+                borderRadius:BorderRadius.circular(10),
+              ),
+              child:TextFormField(
+                keyboardType:TextInputType.number,
+                controller:rattiquantityController,
+                style:TextStyle(
+                  color:Colors.yellow,
+                  fontWeight:FontWeight.bold,
+                ),
+                decoration: InputDecoration(
+                  border:InputBorder.none,
+                  hintText:'enter ratti quantity',
+                  hintStyle:TextStyle(
+                    color:Colors.yellow,
+                    fontWeight:FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height:20),
+            Container(
+              height:40,
+              width:190,
+              decoration: BoxDecoration(
+                color:Colors.black,
+                borderRadius:BorderRadius.circular(10),
+              ),
+              child:TextFormField(
+                keyboardType:TextInputType.number,
+                controller:pointsquantityController,
+                style:TextStyle(
+                  color:Colors.yellow,
+                  fontWeight:FontWeight.bold,
+                ),
+                decoration: InputDecoration(
+                  border:InputBorder.none,
+                  hintText:'enter points quantity',
+                  hintStyle:TextStyle(
+                    color:Colors.yellow,
+                    fontWeight:FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
 
-          SizedBox(height:15),
-          Text(
-            'total Price=$totalprice',
-            style:TextStyle(
+            SizedBox(height:15),
+            FloatingActionButton(
+              backgroundColor: Colors.black,
+              onPressed:(){
+                double a=double.parse(pricerateController.text);
+                double b=double.parse(tolaquantityController.text);
+                double c=double.parse(mashaquantityController.text);
+                double d=double.parse(rattiquantityController.text);
+                double e=double.parse(pointsquantityController.text);
+                totaltola=a*b;
+                print("totaltola=$totaltola");
+
+                totalmasha=a/12 *c;
+                print("total masha=$totalmasha");
+                totalratti=a/96 *d;
+                print("total ratti=$totalratti");
+                totalpoints=a/100 *e;
+                print("total points=$totalpoints");
+                totalbill=totaltola+totalmasha+totalratti+totalpoints;
+                print("total bill=$totalbill");
+                setState((){});
+              },
+              child:Text(
+                'Calculate',
+                style:TextStyle(
+                  color:Colors.yellow,
+                  fontSize:10,
+                  fontWeight:FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(height:10),
+            Text('Total Tolaprice=$totaltola',style:TextStyle(
               color:Colors.black,
-              fontSize:20,
               fontWeight:FontWeight.bold,
-            ),
-          ),
-          FloatingActionButton(
-            backgroundColor: Colors.black,
-            onPressed:(){
-              a=int.parse(priceController.text);
-              b=int.parse(tolaquantityController.text);
-              c=int.parse(mashaquantityController.text);
-              a=a*b;
-              print("total tolaquantity=$a");
-              masha=(a/12) *b;
-              print("total mashaquantity=$masha");
-              totalprice=result+masha;
-              print("total price for customer=$totalprice");
-              setState((){});
-            },
-            child:Text(
-              'total Price',
-              style:TextStyle(
-                color:Colors.yellow,
-                fontSize:10,
-                fontWeight:FontWeight.bold,
-              ),
-            ),
-          ),
-          SizedBox(height:10),
-          FloatingActionButton(
-            backgroundColor: Colors.black,
-            onPressed:(){
-             totalprice=0;
-             priceController.clear();
-             tolaquantityController.clear();
-             mashaquantityController.clear();
-             setState(() {
+              fontSize:15,
+            )),
+            SizedBox(height:10),
+            Text('Total mashaprice=$totalmasha',style:TextStyle(
+              color:Colors.black,
+              fontWeight:FontWeight.bold,
+              fontSize:15,
+            )),
+            SizedBox(height:10),
+            Text('Total rattiprice=$totalratti',style:TextStyle(
+              color:Colors.black,
+              fontWeight:FontWeight.bold,
+              fontSize:15,
+            )),
+            SizedBox(height:10),
+            Text('Total pointsprice=$totalpoints',style:TextStyle(
+              color:Colors.black,
+              fontWeight:FontWeight.bold,
+              fontSize:15,
+            )),
+            SizedBox(height:10),
+            Text('Total bill=$totalbill',style:TextStyle(
+              color:Colors.black,
+              fontWeight:FontWeight.bold,
+              fontSize:15,
+            )),
+            SizedBox(height:10),
+            FloatingActionButton(
+              backgroundColor: Colors.black,
+              onPressed:(){
+               pricerateController.clear();
+               tolaquantityController.clear();
+               mashaquantityController.clear();
+               rattiquantityController.clear();
+               pointsquantityController.clear();
+               totaltola=0;
+               totalmasha=0;
+               totalratti=0;
+               totalpoints=0;
+               totalbill=0;
+               setState(() {
 
-             });
-            },
-            child:Text(
-              'Clear',
-              style:TextStyle(
-                color:Colors.yellow,
-                fontWeight:FontWeight.bold,
-                fontSize:15,
-              ),
+               });
+              },
+              child:Icon(Icons.clear,color:Colors.yellow,size:20),
             ),
-          ),
-        ],
-      ),
+          ],
+                ),
+        ),
       ),
     );
   }
