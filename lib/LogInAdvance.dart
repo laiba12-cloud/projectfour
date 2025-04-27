@@ -48,6 +48,7 @@ TextEditingController passwordController=TextEditingController();
                   fontWeight:FontWeight.bold,
                 ),
                 decoration:InputDecoration(
+                  border:InputBorder.none,
                   hintText:'enter your email',
                   hintStyle:TextStyle(
                     color:Colors.yellow,
@@ -65,12 +66,14 @@ TextEditingController passwordController=TextEditingController();
                 color:Colors.black,
               ),
               child:TextFormField(
+                keyboardType: TextInputType.number,
                 controller: passwordController,
                 style:TextStyle(
                   color:Colors.yellow,
                   fontWeight:FontWeight.bold,
                 ),
                 decoration:InputDecoration(
+                  border:InputBorder.none,
                   hintText:'enter your password',
                   hintStyle:TextStyle(
                     color:Colors.yellow,

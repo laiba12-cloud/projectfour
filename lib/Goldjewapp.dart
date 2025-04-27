@@ -34,7 +34,25 @@ class _GoldJewAppScreenState extends State<GoldJewAppScreen> {
         ),
         centerTitle: true,
         actions:[
-          Icon(Icons.search,color:Colors.yellow,),
+          FloatingActionButton(
+            backgroundColor: Colors.yellow,
+            onPressed:(){
+              pricerateController.clear();
+              tolaquantityController.clear();
+              mashaquantityController.clear();
+              rattiquantityController.clear();
+              pointsquantityController.clear();
+              totaltola=0;
+              totalmasha=0;
+              totalratti=0;
+              totalpoints=0;
+              totalbill=0;
+              setState(() {
+
+              });
+            },
+            child:Icon(Icons.clear,color:Colors.black,size:30),
+          ),
           SizedBox(width:15),
           Icon(Icons.more_vert,color:Colors.yellow,),
         ],
@@ -50,21 +68,22 @@ class _GoldJewAppScreenState extends State<GoldJewAppScreen> {
               height:40,
               width:190,
               decoration: BoxDecoration(
-                color:Colors.black,
+                color:Colors.yellow,
                 borderRadius:BorderRadius.circular(10),
+                border:Border.all(width:2,color:Colors.black,)
               ),
               child:TextFormField(
                 keyboardType:TextInputType.number,
                 controller:pricerateController,
                 style:TextStyle(
-                  color:Colors.yellow,
+                  color:Colors.black,
                   fontWeight:FontWeight.bold,
                 ),
                 decoration: InputDecoration(
                   border:InputBorder.none,
-                  hintText:'enter per tola price',
+                  hintText:' enter per tola price',
                   hintStyle:TextStyle(
-                    color:Colors.yellow,
+                    color:Colors.black,
                     fontWeight:FontWeight.bold,
                   ),
                 ),
@@ -75,21 +94,22 @@ class _GoldJewAppScreenState extends State<GoldJewAppScreen> {
               height:40,
               width:190,
               decoration: BoxDecoration(
-                color:Colors.black,
+                color:Colors.yellow,
                 borderRadius:BorderRadius.circular(10),
+                border:Border.all(width:2,color:Colors.black,)
               ),
               child:TextFormField(
                 keyboardType:TextInputType.number,
                 controller:tolaquantityController,
                 style:TextStyle(
-                  color:Colors.yellow,
+                  color:Colors.black,
                   fontWeight:FontWeight.bold,
                 ),
                 decoration: InputDecoration(
                   border:InputBorder.none,
-                  hintText:'enter tola quantity',
+                  hintText:' enter tola quantity',
                   hintStyle:TextStyle(
-                    color:Colors.yellow,
+                    color:Colors.black,
                     fontWeight:FontWeight.bold,
                   ),
                 ),
@@ -100,21 +120,22 @@ class _GoldJewAppScreenState extends State<GoldJewAppScreen> {
               height:40,
               width:190,
               decoration: BoxDecoration(
-                color:Colors.black,
+                color:Colors.yellow,
                 borderRadius:BorderRadius.circular(10),
+                border:Border.all(width:2,color:Colors.black,)
               ),
               child:TextFormField(
                 keyboardType:TextInputType.number,
                 controller:mashaquantityController,
                 style:TextStyle(
-                  color:Colors.yellow,
+                  color:Colors.black,
                   fontWeight:FontWeight.bold,
                 ),
                 decoration: InputDecoration(
                   border:InputBorder.none,
-                  hintText:'enter masha quantity',
+                  hintText:' enter masha quantity',
                   hintStyle:TextStyle(
-                    color:Colors.yellow,
+                    color:Colors.black,
                     fontWeight:FontWeight.bold,
                   ),
                 ),
@@ -125,21 +146,22 @@ class _GoldJewAppScreenState extends State<GoldJewAppScreen> {
               height:40,
               width:190,
               decoration: BoxDecoration(
-                color:Colors.black,
+                color:Colors.yellow,
                 borderRadius:BorderRadius.circular(10),
+                border:Border.all(width:2,color:Colors.black,)
               ),
               child:TextFormField(
                 keyboardType:TextInputType.number,
                 controller:rattiquantityController,
                 style:TextStyle(
-                  color:Colors.yellow,
+                  color:Colors.black,
                   fontWeight:FontWeight.bold,
                 ),
                 decoration: InputDecoration(
                   border:InputBorder.none,
-                  hintText:'enter ratti quantity',
+                  hintText:' enter ratti quantity',
                   hintStyle:TextStyle(
-                    color:Colors.yellow,
+                    color:Colors.black,
                     fontWeight:FontWeight.bold,
                   ),
                 ),
@@ -150,21 +172,22 @@ class _GoldJewAppScreenState extends State<GoldJewAppScreen> {
               height:40,
               width:190,
               decoration: BoxDecoration(
-                color:Colors.black,
+                color:Colors.yellow,
                 borderRadius:BorderRadius.circular(10),
+                border:Border.all(width:2,color:Colors.black,)
               ),
               child:TextFormField(
                 keyboardType:TextInputType.number,
                 controller:pointsquantityController,
                 style:TextStyle(
-                  color:Colors.yellow,
+                  color:Colors.black,
                   fontWeight:FontWeight.bold,
                 ),
                 decoration: InputDecoration(
                   border:InputBorder.none,
-                  hintText:'enter points quantity',
+                  hintText:' enter points quantity',
                   hintStyle:TextStyle(
-                    color:Colors.yellow,
+                    color:Colors.black,
                     fontWeight:FontWeight.bold,
                   ),
                 ),
@@ -175,32 +198,29 @@ class _GoldJewAppScreenState extends State<GoldJewAppScreen> {
             FloatingActionButton(
               backgroundColor: Colors.black,
               onPressed:(){
-                double a=double.parse(pricerateController.text);
-                double b=double.parse(tolaquantityController.text);
-                double c=double.parse(mashaquantityController.text);
-                double d=double.parse(rattiquantityController.text);
-                double e=double.parse(pointsquantityController.text);
-                totaltola=a*b;
-                print("totaltola=$totaltola");
 
-                totalmasha=a/12 *c;
+                double priceTola=double.parse(pricerateController.text);
+                double tolaQuantity=double.parse(tolaquantityController.text);
+                double mashaQuantity=double.parse(mashaquantityController.text);
+                double rattiQuantity=double.parse(rattiquantityController.text);
+                double pointsQuantity=double.parse(pointsquantityController.text);
+                totaltola=priceTola*tolaQuantity;
+                print("totaltola=$totaltola");
+               // double priceperMasha=
+
+                totalmasha= (priceTola/12) *mashaQuantity;
                 print("total masha=$totalmasha");
-                totalratti=a/96 *d;
+                //double priceperratti=priceTola/96;
+                //totalratti=priceperratti*rattiQuantity;
+                totalratti=(priceTola/96) *rattiQuantity;
                 print("total ratti=$totalratti");
-                totalpoints=a/100 *e;
+                totalpoints=(priceTola/100) *pointsQuantity;
                 print("total points=$totalpoints");
                 totalbill=totaltola+totalmasha+totalratti+totalpoints;
                 print("total bill=$totalbill");
                 setState((){});
               },
-              child:Text(
-                'Calculate',
-                style:TextStyle(
-                  color:Colors.yellow,
-                  fontSize:10,
-                  fontWeight:FontWeight.bold,
-                ),
-              ),
+              child:Icon(Icons.calculate_outlined,color:Colors.yellow,size:30)
             ),
             SizedBox(height:10),
             Text('Total Tolaprice=$totaltola',style:TextStyle(
@@ -233,25 +253,6 @@ class _GoldJewAppScreenState extends State<GoldJewAppScreen> {
               fontSize:15,
             )),
             SizedBox(height:10),
-            FloatingActionButton(
-              backgroundColor: Colors.black,
-              onPressed:(){
-               pricerateController.clear();
-               tolaquantityController.clear();
-               mashaquantityController.clear();
-               rattiquantityController.clear();
-               pointsquantityController.clear();
-               totaltola=0;
-               totalmasha=0;
-               totalratti=0;
-               totalpoints=0;
-               totalbill=0;
-               setState(() {
-
-               });
-              },
-              child:Icon(Icons.clear,color:Colors.yellow,size:20),
-            ),
           ],
                 ),
         ),
